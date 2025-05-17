@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import HeroSection from './Slider';
 import SectionCategory from './SectionCollection';
 
