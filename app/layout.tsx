@@ -8,6 +8,8 @@ import './swiper-bundle.min.rtl.css';
 import './animate.css';
 import './styles.rtl.css';
 
+import Script from 'next/script';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -39,11 +41,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          href="https://sibforms.com/forms/end-form/build/sib-styles.css"
-          rel="stylesheet"
-        />
-
         {/* Favicon and Touch Icons  */}
         <link href="images/logo/favicon.png" rel="shortcut icon" />
         <link
@@ -55,6 +52,52 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Script
+          src="js/bootstrap.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/jquery.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/swiper-bundle.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/carousel.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/bootstrap-select.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/lazysize.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/count-down.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/wow.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/multiple-modal.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script src="js/main.js" type="text/javascript" strategy="lazyOnload" />
       </body>
     </html>
   );
