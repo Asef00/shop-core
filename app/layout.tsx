@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import './fonts/fonts.css';
+import './fonts/font-icons.rtl.css';
+import './bootstrap.min.rtl.css';
+import './swiper-bundle.min.rtl.css';
+import './animate.css';
+import './styles.rtl.css';
+
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -18,11 +26,11 @@ export const metadata: Metadata = {
   icons: {
     icon: '/images/logo/favicon.png',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+  // viewport: {
+  //   width: 'device-width',
+  //   initialScale: 1,
+  //   maximumScale: 1,
+  // },
 };
 
 export default function RootLayout({
@@ -33,17 +41,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* <!-- font --> */}
-        <link href="fonts/fonts.css" rel="stylesheet" />
-        <link href="fonts/font-icons.rtl.css" rel="stylesheet" />
-        <link href="css/bootstrap.min.rtl.css" rel="stylesheet" />
-        <link href="css/swiper-bundle.min.rtl.css" rel="stylesheet" />
-        <link href="css/animate.css" rel="stylesheet" />
-        <link
-          href="https://sibforms.com/forms/end-form/build/sib-styles.css"
-          rel="stylesheet"
-        />
-        <link href="css/styles.rtl.css" rel="stylesheet" type="text/css" />
         {/* Favicon and Touch Icons  */}
         <link href="images/logo/favicon.png" rel="shortcut icon" />
         <link
@@ -55,6 +52,52 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Script
+          src="js/bootstrap.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/jquery.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/swiper-bundle.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/carousel.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/bootstrap-select.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/lazysize.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/count-down.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/wow.min.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="js/multiple-modal.js"
+          type="text/javascript"
+          strategy="lazyOnload"
+        />
+        <Script src="js/main.js" type="text/javascript" strategy="lazyOnload" />
       </body>
     </html>
   );
