@@ -1,10 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import ProductItem from '@/app/components/ProductItem';
+import { usePathname } from 'next/navigation';
+
 
 const menuItems = [
   {
     name: 'خانه',
-    href: '#',
+    href: '/',
   },
   {
     name: 'فروشگاه',
@@ -116,6 +120,13 @@ const menuItems = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === '#') return false;
+    return pathname === href;
+  };
+
   return (
     <header className="header-default header-fullwidth" id="header">
       <div className="row wrapper-header align-items-center">
@@ -143,7 +154,10 @@ export default function Header() {
           <nav className="box-navigation text-center">
             <ul className="box-nav-ul d-flex align-items-center justify-content-center">
               {menuItems.map((item, index) => (
-                <li className="menu-item" key={index}>
+                <li
+                  className={`menu-item ${isActive(item.href) ? 'active' : ''}`}
+                  key={index}
+                >
                   <Link className="item-link" href={item.href}>
                     {item.name}
                     {(item.subMenu || item.subShop) && (
