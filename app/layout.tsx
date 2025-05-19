@@ -10,6 +10,7 @@ import './styles.rtl.css';
 
 import Script from 'next/script';
 import Header from './components/layout/Header';
+import TopBar from './components/layout/TopBar';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -52,6 +53,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <TopBar />
         <Header />
 
         <main>{children}</main>
