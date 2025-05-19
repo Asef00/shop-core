@@ -9,6 +9,7 @@ import './animate.css';
 import './styles.rtl.css';
 
 import Script from 'next/script';
+import Header from './components/layout/Header';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -51,7 +52,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Header />
+
+        <main>{children}</main>
+
         <Script src="/js/jquery.min.js" strategy="beforeInteractive" />
         <Script src="/js/bootstrap.min.js" strategy="beforeInteractive" />
         <Script src="/js/swiper-bundle.min.js" strategy="beforeInteractive" />
