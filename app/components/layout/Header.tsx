@@ -4,8 +4,34 @@ import Link from 'next/link';
 import ProductItem from '@/app/components/ProductItem';
 import { usePathname } from 'next/navigation';
 
+interface MenuItem {
+  name: string;
+  href: string;
+  subMenu?: SubMenu[];
+  subShop?: Product[];
+}
 
-const menuItems = [
+interface SubMenu {
+  name: string;
+  items: SubMenuItem[];
+}
+
+interface SubMenuItem {
+  name: string;
+  href: string;
+}
+
+interface Product {
+  id: number;
+  name: string;
+  price: string;
+  currency: string;
+  image: string;
+  hoverImage: string;
+  href: string;
+}
+
+const menuItems: MenuItem[] = [
   {
     name: 'خانه',
     href: '/',
