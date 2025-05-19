@@ -45,7 +45,7 @@ const collections = [
   },
 ];
 
-export default function SectionCategory() {
+export default function SectionCollection() {
   return (
     <section className="flat-spacing-2">
       <div className="container">
