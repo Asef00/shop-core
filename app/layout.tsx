@@ -52,52 +52,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Script src="/js/jquery.min.js" strategy="beforeInteractive" />
+        <Script src="/js/bootstrap.min.js" strategy="beforeInteractive" />
+        <Script src="/js/swiper-bundle.min.js" strategy="beforeInteractive" />
         <Script
-          src="js/bootstrap.min.js"
-          type="text/javascript"
-          strategy="lazyOnload"
+          src="/js/bootstrap-select.min.js"
+          strategy="beforeInteractive"
         />
-        <Script
-          src="js/jquery.min.js"
-          type="text/javascript"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="js/swiper-bundle.min.js"
-          type="text/javascript"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="js/carousel.js"
-          type="text/javascript"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="js/bootstrap-select.min.js"
-          type="text/javascript"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="js/lazysize.min.js"
-          type="text/javascript"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="js/count-down.js"
-          type="text/javascript"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="js/wow.min.js"
-          type="text/javascript"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="js/multiple-modal.js"
-          type="text/javascript"
-          strategy="lazyOnload"
-        />
-        <Script src="js/main.js" type="text/javascript" strategy="lazyOnload" />
+        <Script src="/js/lazysize.min.js" strategy="lazyOnload" />
+        <Script src="/js/wow.min.js" strategy="lazyOnload" />
+        <Script src="/js/multiple-modal.js" strategy="lazyOnload" />
+        <Script src="/js/carousel.js" strategy="lazyOnload" />
+        <Script src="/js/count-down.js" strategy="lazyOnload" />
+        <Script src="/js/main.js" strategy="lazyOnload" />
       </body>
     </html>
   );
